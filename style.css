@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+} 
+
+.container{
+    display: grid;
+    gap: 10px;
+}
+/* Header */
+.header{
+    display: grid;
+    grid-template-areas: 
+    'gambar gambar feature-1'
+    'gambar gambar feature-2';
+    padding: 10px;
+}
+
+.gambar{
+    grid-area: gambar;
+    min-height: 300px;
+    background-image: url(/Tugas2/img/mainbg.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+    border-radius: 20px 0px 0px 20px;
+}
+
+.gambar > *{
+    display: block;
+    text-align: center;
+}
+
+.features{
+    background-color: #000;
+    color: steelblue;
+    display: grid;
+    /* justify-content: center;
+    align-content: center; */
+    place-content: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.features .item{
+    color: #000;
+}
+
+.feature-1{
+    grid-area: feature-1;
+    background-image: url(/Tugas2/img/guide.jpeg);
+    background-size: cover;
+    border-radius: 0px 20px 0px 0px;
+}
+
+.feature-2{
+    grid-area: feature-2;
+    background-image: url(/Tugas2/img/mountain-beautiful-landscape-background-design-illustration-free-vector.jpg);
+    background-size: cover;
+    border-radius: 0px 0px 20px 0px;
+}
+
+.features .openTrip{
+    font-size: 3em;
+    font-weight: 200;
+}
+nav{
+  order: -1;
+  display: flex;
+  height: 80px;
+  width: 100%;
+  background: #1b1b1b;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+}
+nav .logo{
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+}
+nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li{
+  margin: 0 5px;
+}
+nav ul li a{
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+nav ul li a.active,
+nav ul li a:hover{
+  color: #111;
+  background: #fff;
+}
+nav .menu-btn i{
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"]{
+  display: none;
+}
+
+.content{
+  padding: 30px;
+}
+
+/* Responsive */
+@media (min-width: 1080px){
+  nav{
+    padding: 0 40px 0 50px;
+  }
+  .gambar > *{
+        display: block;
+        text-align: left;
+    }
+  .features .openTrip{
+    font-size: 3em;
+    font-weight: bolder;
+    color:indigo;
+}
+}
+@media (max-width: 920px){
+  nav .menu-btn i{
+    display: block;
+  }
+  .gambar > *{
+    text-align: left;
+  }
+  .gambar{
+    grid-area: gambar;
+    min-height: 300px;
+    background-size: cover;
+    background-position: center;
+    padding: 10px;
+}
+.features .openTrip{
+    font-size: 1.3em;
+    font-weight: bolder;
+    color:indigo;
+}
+
+  #click:checked ~ .menu-btn i:before{
+    content: "\f00d";
+  }
+  nav ul{
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  #click:checked ~ ul{
+    left: 0;
+  }
+  nav ul li{
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a{
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a{
+    margin-left: 0px;
+  }
+  nav ul li a.active,
+  nav ul li a:hover{
+    background: none;
+    color: cyan;
+  }
+}
+
+@media (max-width:320px){
+  nav .menu-btn i{
+    display: block;
+  }
+  .gambar > *{
+    text-align: left;
+  }
+  .gambar{
+    grid-area: gambar;
+    min-height: 300px;
+    background-size: cover;
+    background-position: center;
+    padding: 10px;
+}
+.features .openTrip{
+    font-size: 1.3em;
+    min-height: 300px;
+    font-weight: bolder;
+    color:indigo;
+    padding: 20px;
+}
+.features .item{
+    display: none;
+}
+
+
+.header{
+    display: grid;
+    grid-template-areas: 
+    'gambar gambar gambar'
+    'feature-1 feature-1 feature-1'
+    'feature-2 feature-2 feature-2';
+    padding: 10px;
+}
+
+.gambar{
+    grid-area: gambar;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.gambar > *{
+    display: block;
+    text-align: center;
+}
+
+.features{
+    background-color: #000;
+    color: steelblue;
+    display: grid;
+    /* justify-content: center;
+    align-content: center; */
+    place-content: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.features .item{
+    color: #000;
+}
+
+.feature-1{
+    grid-area: feature-1;
+    border-radius: 0px 0px 0px 0px;
+}
+
+.feature-2{
+    grid-area: feature-2;
+    border-radius: 0px 0px 20px 20px;
+}
+
+
+  #click:checked ~ .menu-btn i:before{
+    content: "\f00d";
+  }
+  nav ul{
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  #click:checked ~ ul{
+    left: 0;
+  }
+  nav ul li{
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a{
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a{
+    margin-left: 0px;
+  }
+  nav ul li a.active,
+  nav ul li a:hover{
+    background: none;
+    color: cyan;
+  }
+}
